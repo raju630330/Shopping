@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Index1";
+}
+
+<h2>Index1</h2>
+<table border="1" align="center" width="15%">
+    <caption>Product Details</caption>
+    <tr>
+        <td>Id:</td>
+        <td>@ViewData["Id1"]</td>
+    </tr>
+    <tr>
+        <td>Name:</td>
+        <td>@ViewData["Name"]</td>
+    </tr>
+    <tr>
+        <td>Price:</td>
+        <td>
+            @{
+                //@ViewData["Price"]
+                double Price = Convert.ToDouble(@ViewData["Price"]);
+                Price = Price + (Price * 10 / 100);
+                @Price
+            }
+        </td>
+    </tr>
+</table>
+
+
